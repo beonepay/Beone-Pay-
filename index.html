@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beone Pay</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    .loader-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #121212;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+      z-index: 9999;
+      position: fixed;
+      width: 100%;
+    }
+
+    .loader-container.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader {
+      border: 5px solid #1f1f1f;
+      border-top: 5px solid #0095f6;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    .loader-text {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .download-notice {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #1f1f1f;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #333;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .download-notice.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .image-box {
+      width: 80px;
+      height: 80px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      animation: pop 0.6s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .download-notice h2 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .download-notice button {
+      background-color: #0095f6;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .download-notice button:hover {
+      background-color: #007ac1;
+      transform: scale(1.05);
+    }
+
+    .content {
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .content.show {
+      opacity: 1;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      color: #c0c0c0;
+      line-height: 1.5;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="loader-container" id="loader">
+    <div class="loader"></div>
+    <div class="loader-text">Beone Pay</div>
+  </div>
+
+  <div class="download-notice" id="downloadNotice">
+    <div class="image-box" id="logo-box" style="background-image: url('https://od.lk/s/NDFfODYxMDEwMzlf/Beone%20Pay%20Official%20Logo.jpg');"></div>
+    <h2>Download official Beone Pay app here</h2>
+    <button id="download-btn">Download Now</button>
+  </div>
+
+  <div class="content" id="mainContent">
+    <div class="section">
+      <h3>About Us</h3>
+      <p>We are a forward-thinking digital business and branding company dedicated to making online business solutions simple, affordable, and accessible for everyone. Our core mission is to provide the cheapest and most practical business and branding services in Nigeria, without compromising quality, professionalism, or results.</p>
+      <p>Founded in 2023, our journey began with a clear vision: to bridge the gap between small businesses, startups, creatives, and the digital tools they need to grow. Since our launch, we have remained committed to continuous improvement, consistently updating our systems, services, and processes to meet modern standards and evolving industry demands. Growth, innovation, and adaptability are at the heart of everything we do.</p>
+      <p>Today, we are proud to serve a rapidly growing community of over 600,000+ users, spanning entrepreneurs, brands, creatives, and businesses across Nigeria and beyond. This growth is a strong reflection of the trust our users place in us and the value we consistently deliver.</p>
+      <p>At the center of our operations is a strong belief that customer satisfaction is our top priority. Every service we provide is designed with our users in mind—focused on reliability, simplicity, affordability, and long-term success. We don’t just offer services; we build relationships, support growth, and help brands establish a strong and credible online presence.</p>
+      <p>Trust is one of our greatest assets. Through transparency, consistent delivery, and customer-focused solutions, we have earned a reputation as a trusted digital partner for individuals and businesses seeking dependable online branding and business support.</p>
+      <p>Our company is led by Buhari Abdullahi Muhammad, the Main Director, whose vision, leadership, and commitment to excellence continue to guide our growth and strategic direction. Under his leadership, we remain focused on empowering businesses, supporting innovation, and creating opportunities through digital solutions.</p>
+      <p>As we move forward, our goal remains the same: to simplify online business, make branding affordable for all, and help our users succeed in a competitive digital world.</p>
+    </div>
+
+    <div class="section">
+      <h3>Our Address</h3>
+      <p>123 Yantaya Street, Jos, Nigeria</p>
+    </div>
+
+    <div class="section">
+      <h3>Contact</h3>
+      <p>Email: support@beonepay.com</p>
+      <p>Phone: +2347047591785</p>
+    </div>
+
+    <div class="section">
+      <h3>Our Partners</h3>
+      <p>Ibrahim Muazzamu OC</p>
+      <p>Big Mdias resources</p>
+      <p>Beone Studio</p>
+      <div class="logo" style="background-image: url('https://via.placeholder.com/100');"></div>
+      <div class="logo" style="background-image: url('https://via.placeholder.com/100');"></div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').classList.add('hide');
+        document.getElementById('downloadNotice').classList.add('show');
+        document.getElementById('mainContent').classList.add('show');
+      }, 2000);
+    });
+
+    document.getElementById('download-btn').addEventListener('click', function() {
+      // Use cloud-hosted APK link
+      window.location.href = 'https://od.lk/s/NDFfODYxMDM3MjZf/app3841186-j6wcbo.apk';
+    });
+  </script>
+
+</body>
+</html>
