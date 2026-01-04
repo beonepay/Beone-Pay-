@@ -6,208 +6,137 @@
   
   <meta name="google-site-verification" content="IcTvWu2bbvuL0kKRn7SLeWtgJMfkt3v5cYAJHCtlFjo" />
   
-  <title>Beone Pay | Local Buying and Selling App Nigeria</title>
-  <meta name="description" content="Beone Pay: The market on your palm. A simple and affordable trading and e-commerce app for easy business services in Nigeria.">
-  <meta name="keywords" content="Local buying and selling app Nigeria, Market on your palm, Trading app, E commerce, Beone pay, Business development, Easy services">
+  <title>Beone Pay | Local & International Trading App</title>
+  <meta name="description" content="Trade locally with Naira, exchange crypto, and connect globally. Beone Pay: The all-in-one platform to buy, sell, earn Beone Coins, and thrive.">
+  <meta name="keywords" content="Beone Pay, Trading App Nigeria, Buy and Sell Naira, Crypto Exchange Nigeria, Beone Coins, International Trade, Local Marketplace">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #121212;
-      color: #e0e0e0;
-      overflow-x: hidden;
+    body { margin: 0; font-family: 'Segoe UI', Arial, sans-serif; background-color: #121212; color: #e0e0e0; overflow-x: hidden; }
+    
+    /* NEW CLEAN PROGRESS LOADER WITH SUBTITLE */
+    .loader-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #121212; z-index: 9999; position: fixed; width: 100%; transition: 0.5s; }
+    .loader-title { color: #0095f6; font-weight: bold; letter-spacing: 2px; font-size: 24px; }
+    .loader-subtitle { color: #888; font-size: 14px; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+    .progress-bar-wrap { width: 180px; height: 3px; background: #1f1f1f; border-radius: 10px; overflow: hidden; margin-top: 20px; }
+    .progress-fill { width: 0%; height: 100%; background: #0095f6; animation: loading 1.5s infinite ease-in-out; }
+    @keyframes loading { 0% { width: 0%; } 50% { width: 100%; } 100% { width: 0%; } }
+
+    /* HEADER & DOWNLOAD */
+    .download-notice { display: flex; flex-direction: column; align-items: center; background-color: #1f1f1f; padding: 30px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #0095f6; opacity: 0; transform: translateY(-20px); transition: 0.8s ease; }
+    .download-notice.show { opacity: 1; transform: translateY(0); }
+    .image-box { width: 80px; height: 80px; background-size: cover; background-position: center; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+    .download-notice h2 { margin: 0 0 15px 0; font-size: 18px; text-align: center; color: #fff; }
+    .download-notice button { background-color: #0095f6; border: none; padding: 12px 35px; color: white; font-size: 16px; font-weight: bold; border-radius: 30px; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0, 149, 246, 0.3); }
+    .download-notice button:hover { background-color: #007ac1; transform: scale(1.05); }
+
+    /* SMALLER PLAY STORE SLIDER STYLE */
+    .app-gallery { 
+      display: flex; 
+      overflow-x: auto; 
+      gap: 12px; 
+      padding: 20px 15px; 
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .app-gallery::-webkit-scrollbar { display: none; }
+    
+     .gallery-item { 
+      width: 150px;           /* CHANGE THIS: Controls the size */
+      min-width: 150px;       /* CHANGE THIS: Must match the width above */
+      flex-shrink: 0;         /* Stops images from squishing */
+      aspect-ratio: 9/16; 
+      background-color: #1f1f1f; 
+      border-radius: 10px; 
+      border: 1px solid #333; 
+      object-fit: cover; 
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
-    .loader-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background-color: #121212;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-      z-index: 9999;
-      position: fixed;
-      width: 100%;
-    }
 
-    .loader-container.hide {
-      opacity: 0;
-      visibility: hidden;
-    }
+    /* CONTENT SECTIONS */
+    .content { padding: 25px; opacity: 0; transition: opacity 1s ease; max-width: 800px; margin: 0 auto; }
+    .content.show { opacity: 1; }
+    .section { margin-bottom: 40px; }
+    .section h3 { color: #0095f6; font-size: 20px; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+    .section p { color: #cccccc; line-height: 1.7; font-size: 15px; margin-bottom: 15px; }
+    .highlight { color: #ffffff; font-weight: bold; }
 
-    .loader {
-      border: 5px solid #1f1f1f;
-      border-top: 5px solid #0095f6;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1s linear infinite;
-      margin-bottom: 15px;
-    }
-
-    .loader-text {
-      font-size: 18px;
-      font-weight: bold;
-      color: #ffffff;
-      text-align: center;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .download-notice {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #1f1f1f;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #333;
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .download-notice.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .image-box {
-      width: 80px;
-      height: 80px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      animation: pop 0.6s ease;
-    }
-
-    @keyframes pop {
-      0% { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .download-notice h2 {
-      margin: 0 0 10px 0;
-      font-size: 18px;
-      text-align: center;
-    }
-
-    .download-notice button {
-      background-color: #0095f6;
-      border: none;
-      padding: 10px 20px;
-      color: white;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .download-notice button:hover {
-      background-color: #007ac1;
-      transform: scale(1.05);
-    }
-
-    .content {
-      padding: 20px;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-
-    .content.show {
-      opacity: 1;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section h3 {
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
-
-    .section p {
-      color: #c0c0c0;
-      line-height: 1.5;
-    }
-
-    .logo {
-      width: 100px;
-      height: 100px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-      margin: 10px 0;
-    }
-
+    .logo-container { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
+    .logo { width: 70px; height: 70px; background-size: cover; background-position: center; border-radius: 10px; background-color: #333; }
   </style>
 </head>
 <body>
 
   <div class="loader-container" id="loader">
-    <div class="loader"></div>
-    <div class="loader-text">Beone Pay</div>
+    <div class="loader-title">BEONE PAY</div>
+    <div class="loader-subtitle">Market on your palm</div>
+    <div class="progress-bar-wrap">
+      <div class="progress-fill"></div>
+    </div>
   </div>
 
   <div class="download-notice" id="downloadNotice">
-    <div class="image-box" id="logo-box" style="background-image: url('https://od.lk/s/NDFfODYyMDM2NTNf/20251222_214524.jpg');"></div>
-    <h2>Download official Beone Pay app here</h2>
-    <button id="download-btn">Download Now</button>
+    <div class="image-box" style="background-image: url('https://od.lk/s/NDFfODYyMDM2NTNf/20251222_214524.jpg');"></div>
+    <h2>Don’t just transact—thrive with Beone Pay</h2>
+    <button id="download-btn">Download Official App</button>
+  </div>
+
+  <div class="app-gallery" id="gallery">
+    <img src="https://od.lk/s/NDFfODY0NjU0Nzdf/Screenshot_20260104-004941.png" alt="Beone Pay 1" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODRf/Screenshot_20260104-003550.png" alt="Beone Pay 2" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODFf/Screenshot_20260104-003655.png" alt="Beone Pay 3" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0NzFf/Screenshot_20260104-003734.png" alt="Beone Pay 4" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0NzNf/Screenshot_20260104-003741.png" alt="Beone Pay 5" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0NzVf/Screenshot_20260104-003748.png" alt="Beone Pay 6" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0Nzlf/Screenshot_20260104-003756.png" alt="Beone pay 7" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODVf/Screenshot_20260104-003809.png" alt="Beone Pay 8" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODZf/Screenshot_20260104-003820.png" alt="Beone Pay 9" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODdf/Screenshot_20260104-003856.png" alt="Beone Pay 10" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODhf/Screenshot_20260104-003946.png" alt="Beone Pay 11" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODNf/Screenshot_20260104-004028.png" alt="Beone Pay 12" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODBf/Screenshot_20260104-004101.png" alt="Beone Pay 13" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0ODJf/Screenshot_20260104-004109.png" alt="Beone Pay 14" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0NzJf/Screenshot_20260104-004122.png" alt="Beone Pay 15" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0NzRf/Screenshot_20260104-004134.png" alt="Beone Pay 16" class="gallery-item">
+    <img src="https://od.lk/s/NDFfODY0NjU0NzZf/Screenshot_20260104-004145.png" alt="Beone Pay 17" class="gallery-item">
   </div>
 
   <div class="content" id="mainContent">
     <div class="section">
-      <h3>About Us</h3>
-      <p>We are a forward-thinking digital business company dedicated to making online business solutions simple, affordable, and accessible for everyone. Our core mission is to provide the cheapest and most practical trading and business services in Nigeria, without compromising quality, professionalism, or results.</p>
-      <p>Founded in 2023, our journey began with a clear vision: to bridge the gap between small businesses, startups, creatives, and the digital tools they need to grow. Since our launch, we have remained committed to continuous improvement, consistently updating our systems, services, and processes to meet modern standards and evolving industry demands. Growth, innovation, and adaptability are at the heart of everything we do.</p>
-      <p>Today, we are proud to serve a rapidly growing community of over 600,000+ users, spanning entrepreneurs, brands, creatives, and businesses across Nigeria and beyond. This growth is a strong reflection of the trust our users place in us and the value we consistently deliver.</p>
-      <p>At the center of our operations is a strong belief that customer satisfaction is our top priority. Every service we provide is designed with our users in mind—focused on reliability, simplicity, affordability, and long-term success. We don’t just offer services; we build relationships, support growth, and help users establish a strong and credible online presence.</p>
-      <p>Trust is one of our greatest assets. Through transparency, consistent delivery, and customer-focused solutions, we have earned a reputation as a trusted digital partner for individuals and businesses seeking dependable online support.</p>
-      <p>Our company is led by Buhari Abdullahi Muhammad, the Main Director, whose vision, leadership, and commitment to excellence continue to guide our growth and strategic direction. Under his leadership, we remain focused on empowering businesses, supporting innovation, and creating opportunities through digital solutions.</p>
-      <p>As we move forward, our goal remains the same: to simplify online business, make trading affordable for all, and help our users succeed in a competitive digital world.</p>
+      <h3>Your Global Trade Gateway</h3>
+      <p class="highlight">Experience smarter trading, seamless international connections, and limitless opportunities to earn—all in one app.</p>
+      <p>Beone Pay is the ultimate local and international trading platform designed for the modern entrepreneur. Buy and sell locally using Naira with <span class="highlight">zero shipping fees</span>, or dive into the global market with seamless currency and crypto exchanges.</p>
+      <p>More than just a marketplace, Beone connects you to global communities on WhatsApp, WeChat, and Telegram, allowing you to discover deals beyond borders. Boost your business with instant ads, stay ahead with trending business news, and sharpen your skills with our built-in growth tools.</p>
+      <p>Earn rewards while you trade with <span class="highlight">Beone Coins</span>, explore verified second-hand products, and access essential services like transport assistance and cheap data plans. Everything you need to grow your wealth and business is now in the palm of your hand.</p>
     </div>
 
     <div class="section">
-      <h3>Our Address</h3>
-      <p>123 Yantaya Street, Jos, Nigeria</p>
-    </div>
-
-    <div class="section">
-      <h3>Contact</h3>
-      <p>Email: beonepay0official@gmail.com</p>
-      <p>Phone: +234 704 759 1785</p>
+      <h3>Contact & Support</h3>
+      <p><b>Email:</b> beonepay0official@gmail.com</p>
+      <p><b>Phone:</b> +234 704 759 1785</p>
+      <p><b>Headquarters:</b> 123 Yantaya Street, Jos, Nigeria</p>
     </div>
 
     <div class="section">
       <h3>Our Partners</h3>
-      <p>Ibrahim Muazzamu OC</p>
-      <p>Big Mdias resources</p>
-      <p>Beone Studio</p>
-      <div class="logo" style="background-image: url('https://od.lk/s/NDFfODYyMDM2NTJf/20251222_213320.jpg');"></div>
-      <div class="logo" style="background-image: url('https://via.placeholder.com/100');"></div>
+      <div class="logo-container">
+        <div class="logo" style="background-image: url('https://od.lk/s/NDFfODYyMDM2NTJf/20251222_213320.jpg');"></div>
+        <div class="logo"></div>
+      </div>
     </div>
   </div>
 
   <script>
     window.addEventListener('load', function() {
-      setTimeout(function() {
-        document.getElementById('loader').classList.add('hide');
+      document.getElementById('loader').style.opacity = '0';
+      setTimeout(() => { 
+        document.getElementById('loader').style.display = 'none';
         document.getElementById('downloadNotice').classList.add('show');
         document.getElementById('mainContent').classList.add('show');
-      }, 2000);
+      }, 500);
     });
 
     document.getElementById('download-btn').addEventListener('click', function() {
-      // Use cloud-hosted APK link
       window.location.href = 'https://od.lk/d/NDFfODYyMjcyMzVf/app3841186-j6wcbo%20%281%29.apk';
     });
   </script>
